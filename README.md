@@ -1,37 +1,31 @@
-# Arduino LCD Random Number + Countdown Timer
+# Arduino LCD Stopwatch
 
-A simple Arduino project using a **16x2 LCD** and a **button**.
+A simple stopwatch using an Arduino and a 16x2 LCD display.
 
-The LCD shows:
-- A **random number** on the top line
-- A **10-second countdown** on the bottom line
-
-When the countdown reaches 0:
-- A new random number appears
-- Countdown resets and starts again
+Features:
+- Start stopwatch with button press
+- Stop stopwatch with button press
+- Hold button to reset
+- LCD shows time in **MM:SS:HH** format
+- Adjustable LCD contrast with potentiometer
 
 ---
 
 ## Tools & Parts
 
-### Hardware
 - 1x Breadboard
 - 1x Arduino Nano / Uno / Pro Mini
 - 1x 16x2 LCD (HD44780 compatible)
 - 1x 10k potentiometer
 - 1x Push button
 - Jumper wires
-
-### Software
-- Arduino IDE
+- USB cable
 
 ---
 
 ## Wiring
 
 ### Connect the Arduino Nano to the breadboard.
-
----
 
 ### 16x2 LCD (HD44780 compatible)
 
@@ -54,31 +48,30 @@ K → GND
 
 One side → 5V  
 Other side → GND  
-Middle pin → V0 (LCD contrast)
+Middle pin → V0 (LCD contrast)  
 
 ---
 
 ### Button
 
 One side → D12  
-Other side → D10
+Other side → D10  
 
 ---
 
 ## Step-by-Step
 
-### 1. Connect the Arduino
-Place the Arduino on the breadboard or beside it.
+### 1. Connect Arduino
+Place the Arduino on the breadboard.
 
 ### 2. Wire the LCD
-Connect all LCD pins using the wiring list above.
+Connect all LCD pins to the Arduino and power.
 
-### 3. Connect the potentiometer
-Wire the contrast control.
+### 3. Wire the potentiometer
+Connect it to control LCD contrast.
 
-### 4. Connect the button
-One side to D12  
-Other side to D10
+### 4. Wire the button
+Connect between D12 and D10.
 
 ### 5. Plug in USB
 Connect Arduino to your computer.
@@ -86,10 +79,9 @@ Connect Arduino to your computer.
 ### 6. Open Arduino IDE
 
 ### 7. Select board
-Tools → Board
+Choose Arduino Nano / Uno / Pro Mini.
 
 ### 8. Select port
-Tools → Port
 
 ### 9. Upload the code
 
@@ -100,20 +92,27 @@ Tools → Port
 ### Turn potentiometer
 Adjust until text appears.
 
-### LCD display
+### Press button once
+Stopwatch starts.
 
-Top line:
-- Random number
+### Press again
+Stopwatch stops.
 
-Bottom line:
-- Countdown from **10 → 1**
-
-### Every 10 seconds
-- Countdown resets
-- Random number changes
+### Press and hold
+Stopwatch resets back to **00:00:00**
 
 ---
 
-## Result
+## Display
 
-The LCD continuously shows a random number and updates it every 10 seconds while displaying a live countdown.
+Example:
+
+00:00:00
+
+Format:
+
+MM:SS:HH
+
+- MM = minutes
+- SS = seconds
+- HH = hundredths
